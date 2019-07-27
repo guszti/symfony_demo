@@ -1,3 +1,20 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+dashboard:
+  path: /
+  controller: App\Controller\PagesController::index
+
+user:
+  path: /user/{id}
+  controller: App\Controller\PagesController::user
+  methods: GET
+
+editor:
+  path: /editor
+  controller: App\Controller\PagesController::editor
+
+administrator:
+  path: /administrator
+  controller: App\Controller\PagesController::administrator
