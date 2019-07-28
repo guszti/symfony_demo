@@ -3,8 +3,13 @@
 {% block body %}
     <h1>Profile page</h1>
     <div>
+        <h2>Username</h2>
         <p>{{ user.username }}</p>
-        <p>{{ dump(user.roles) }}</p>
-        <p>{{ user.last_online|date('d-m-Y') }}</p>
+        <h2>User roles</h2>
+        {% for role in user.roles %}
+            <p>{{role}}</p>
+        {% endfor %}
+        <h2>Last online</h2>
+        <p>{{ last_online }}</p>
     </div>
 {% endblock %}

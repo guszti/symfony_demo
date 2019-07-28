@@ -107,14 +107,14 @@ class User implements UserInterface
     /**
      * @see UserInterface
      */
-    public function getLast_online(): date
+    public function getLastonline(): \DateTime
     {
-        return (string) $this->last_online;
+        return $this->last_online;
     }
 
-    public function setLastonline(): self
+    public function setLastonline(\DateTime $date): self
     {
-        $this->last_online = new \DateTime("now");
+        $this->last_online = $date;
 
         return $this;
     }
