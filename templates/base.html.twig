@@ -6,7 +6,9 @@
     </head>
     <body>
         <ul>
-            <li><a href="{{ path('dashboard') }}">Home</a></li>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li><a href="{{ path('dashboard') }}">Home</a></li>
+            {% endif %}
             {% if is_granted('ROLE_USER') %}
                 <li><a href="{{ path('user') }}">Profile page</a></li>
             {% endif %}
