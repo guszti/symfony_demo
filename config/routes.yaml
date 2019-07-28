@@ -7,7 +7,7 @@ dashboard:
   controller: App\Controller\PagesController::index
 
 user:
-  path: /user/{id}
+  path: /user
   controller: App\Controller\PagesController::user
   methods: GET
 

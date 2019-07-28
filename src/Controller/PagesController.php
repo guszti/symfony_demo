@@ -15,10 +15,12 @@ class PagesController extends AbstractController
         ]);
     }
 
-    public function user($id){
+    public function user(){ 
+        $user = $this->getUser();
+
         return $this->render('user/index.html.twig', [
             'controller_name' => 'PagesController',
-            'id' => $id
+            'user'=> $user
         ]);
     }
 

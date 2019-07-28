@@ -45,7 +45,7 @@ class User implements UserInterface
 
     public function __construct()
     {
-        $this->date_added = new DateTime(); 
+        $this->date_added = new \DateTime("now"); 
     }
 
     public function getId(): ?int
@@ -99,7 +99,22 @@ class User implements UserInterface
 
     public function setPassword(string $password): self
     {
-        $this->password = $password;
+        $this->password = \password_hash($password, PASSWORD_BCRYPT, array('cost' => 13));
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getLast_online(): date
+    {
+        return (string) $this->last_online;
+    }
+
+    public function setLastonline(): self
+    {
+        $this->last_online = new \DateTime("now");
 
         return $this;
     }
