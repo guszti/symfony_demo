@@ -1,0 +1,29 @@
+
+{% block navbar %}
+  <nav class="navbar navbar-expand-md navbar-dark top bg-dark">
+    <a class="navbar-brand" href="#">Symfony app</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li class="nav-item active"><a class="nav-link" href="{{ path('dashboard') }}">Home</a></li>
+        {% endif %}
+        {% if is_granted('ROLE_USER') %}
+            <li class="nav-item active"><a class="nav-link" href="{{ path('user') }}">Profile page</a></li>
+        {% endif %}
+        {% if is_granted('ROLE_EDITOR') %}
+            <li class="nav-item active"><a class="nav-link" href="{{ path('editor') }}">Editor page</a></li>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <li class="nav-item active"><a class="nav-link" href="{{ path('administrator') }}">Administrator page</a></li>
+        {% endif %}
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li class="nav-item active"><a class="nav-link float-right" href={{path('app_logout')}}>Log out</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+{% endblock %}
+

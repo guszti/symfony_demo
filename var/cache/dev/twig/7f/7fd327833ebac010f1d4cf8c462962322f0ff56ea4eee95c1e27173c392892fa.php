@@ -44,66 +44,25 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
         echo "<!DOCTYPE html>
 <html>
     <head>
+        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
         <meta charset=\"UTF-8\">
         <title>Demo application</title>
     </head>
     <body>
-        <ul>
-            ";
+        ";
         // line 9
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 10
-            echo "                <li><a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard");
-            echo "\">Home</a></li>
-            ";
-        }
-        // line 12
-        echo "            ";
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 13
-            echo "                <li><a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user");
-            echo "\">Profile page</a></li>
-            ";
-        }
-        // line 15
-        echo "            ";
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_EDITOR")) {
-            // line 16
-            echo "                <li><a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor");
-            echo "\">Editor page</a></li>
-            ";
-        }
-        // line 18
-        echo "            ";
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 19
-            echo "                <li><a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("administrator");
-            echo "\">Administrator page</a></li>
-            ";
-        }
-        // line 21
-        echo "        </ul>
-
+        $this->loadTemplate("navbar.html.twig", "base.html.twig", 9)->display($context);
+        // line 10
+        echo "        <div class=\"container\">
         ";
-        // line 23
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 24
-            echo "            <a href=";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "><button>Log out</button></a>
-        ";
-        }
-        // line 26
-        echo "
-        ";
-        // line 27
+        // line 11
         $this->displayBlock('body', $context, $blocks);
-        // line 28
-        echo "    </body>
+        // line 12
+        echo "        </div>
+        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
+    </body>
 </html>
 ";
         
@@ -114,7 +73,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 27
+    // line 11
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -144,7 +103,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     public function getDebugInfo()
     {
-        return array (  118 => 27,  106 => 28,  104 => 27,  101 => 26,  95 => 24,  93 => 23,  89 => 21,  83 => 19,  80 => 18,  74 => 16,  71 => 15,  65 => 13,  62 => 12,  56 => 10,  54 => 9,  44 => 1,);
+        return array (  77 => 11,  61 => 12,  59 => 11,  56 => 10,  54 => 9,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -152,30 +111,18 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
         return new Source("<!DOCTYPE html>
 <html>
     <head>
+        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
         <meta charset=\"UTF-8\">
         <title>Demo application</title>
     </head>
     <body>
-        <ul>
-            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <li><a href=\"{{ path('dashboard') }}\">Home</a></li>
-            {% endif %}
-            {% if is_granted('ROLE_USER') %}
-                <li><a href=\"{{ path('user') }}\">Profile page</a></li>
-            {% endif %}
-            {% if is_granted('ROLE_EDITOR') %}
-                <li><a href=\"{{ path('editor') }}\">Editor page</a></li>
-            {% endif %}
-            {% if is_granted('ROLE_ADMIN') %}
-                <li><a href=\"{{ path('administrator') }}\">Administrator page</a></li>
-            {% endif %}
-        </ul>
-
-        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            <a href={{path('app_logout')}}><button>Log out</button></a>
-        {% endif %}
-
+        {% include('navbar.html.twig') %}
+        <div class=\"container\">
         {% block body %}{% endblock %}
+        </div>
+        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
     </body>
 </html>
 ", "base.html.twig", "/home/guszti/Documents/php/symfony_demo/templates/base.html.twig");

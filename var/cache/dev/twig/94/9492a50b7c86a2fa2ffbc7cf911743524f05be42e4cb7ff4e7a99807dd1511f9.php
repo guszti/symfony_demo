@@ -110,7 +110,7 @@ class __TwigTemplate_23555facdb37bdc4ebb5530e19ea7f67ef3aed814398bd703145dfe5e2b
         }
         // line 14
         echo "
-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
+    <h1 class=\"h3 mb-3 font-weight-normal\" style=\"text-align:center;padding-top:15%\">Please sign in</h1>
     <label for=\"inputUsername\" class=\"sr-only\">Username</label>
     <input type=\"text\" value=\"";
         // line 17
@@ -173,7 +173,7 @@ class __TwigTemplate_23555facdb37bdc4ebb5530e19ea7f67ef3aed814398bd703145dfe5e2b
         <div class=\"checkbox mb-3\">You are logged in as {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">Logout</a>
     {% endif %}
 
-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
+    <h1 class=\"h3 mb-3 font-weight-normal\" style=\"text-align:center;padding-top:15%\">Please sign in</h1>
     <label for=\"inputUsername\" class=\"sr-only\">Username</label>
     <input type=\"text\" value=\"{{ last_username }}\" name=\"username\" id=\"inputUsername\" class=\"form-control\" placeholder=\"Username\" required autofocus>
     <label for=\"inputPassword\" class=\"sr-only\">Password</label>
