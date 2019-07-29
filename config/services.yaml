@@ -29,3 +29,7 @@ services:
     Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler:
         arguments:
             - !service { class: PDO, factory: ['@database_connection', 'getWrappedConnection'] }
+    
+    App\EventListener\AuthenticationListener:
+        tags:
+            - { name: 'kernel.event_listener', event: 'security.interactive_login' }

@@ -404,6 +404,10 @@
         <argument type="service" id=".service_locator.CDOTD6..App\Controller\UserController"/>
       </call>
     </service>
+    <service id="App\EventListener\AuthenticationListener" class="App\EventListener\AuthenticationListener" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_listener" event="security.interactive_login"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
     <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1931,6 +1935,14 @@
       <argument type="service" id="debug.stopwatch"/>
       <argument type="service" id="monolog.logger.event" on-invalid="null"/>
       <argument type="service" id="request_stack" on-invalid="null"/>
+      <call method="addListener">
+        <argument>security.interactive_login</argument>
+        <argument type="collection">
+          <argument type="service" id="App\EventListener\AuthenticationListener"/>
+          <argument>onSecurityInteractivelogin</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
       <call method="addListener">
         <argument>kernel.controller</argument>
         <argument type="collection">
