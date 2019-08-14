@@ -65,7 +65,7 @@ class __TwigTemplate_78e177e01bd4077f95b32e0da28e755c0b7455b5d870e23e446636a3719
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>The index page</h1>
+        echo "    <h1>The dashboard</h1>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -95,7 +95,7 @@ class __TwigTemplate_78e177e01bd4077f95b32e0da28e755c0b7455b5d870e23e446636a3719
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>The index page</h1>
+    <h1>The dashboard</h1>
 {% endblock %}
 ", "dashboard/index.html.twig", "/home/guszti/Documents/php/symfony_demo/templates/dashboard/index.html.twig");
     }

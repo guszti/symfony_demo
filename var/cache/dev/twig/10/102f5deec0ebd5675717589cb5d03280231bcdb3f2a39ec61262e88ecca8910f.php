@@ -91,7 +91,7 @@ class __TwigTemplate_bd54e228465b6f819eed84b5e165fb4e5c77a24de6a3d89ffef48aaf9c0
         echo "        <h2>Last online</h2>
         <p>";
         // line 13
-        echo twig_escape_filter($this->env, (isset($context["last_online"]) || array_key_exists("last_online", $context) ? $context["last_online"] : (function () { throw new RuntimeError('Variable "last_online" does not exist.', 13, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 13, $this->source); })()), "last_online", [], "any", false, false, false, 13), "html", null, true);
         echo "</p>
     </div>
 ";
@@ -132,7 +132,7 @@ class __TwigTemplate_bd54e228465b6f819eed84b5e165fb4e5c77a24de6a3d89ffef48aaf9c0
             <p>{{role}}</p>
         {% endfor %}
         <h2>Last online</h2>
-        <p>{{ last_online }}</p>
+        <p>{{ user.last_online }}</p>
     </div>
 {% endblock %}", "user/index.html.twig", "/home/guszti/Documents/php/symfony_demo/templates/user/index.html.twig");
     }

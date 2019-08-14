@@ -107,9 +107,9 @@ class User implements UserInterface
     /**
      * @see UserInterface
      */
-    public function getLastonline(): \DateTime
+    public function getLast_online(): string
     {
-        return $this->last_online;
+        return $this->last_online->format('Y-m-d H:i:s');
     }
 
     public function setLastonline(\DateTime $date): self
