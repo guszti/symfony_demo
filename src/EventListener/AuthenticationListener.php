@@ -17,13 +17,10 @@ class AuthenticationListener
 
     public function onSecurityInteractiveLogin(InteractiveLoginEvent $event)
     {
-        // Get the User entity.
         $user = $event->getAuthenticationToken()->getUser();
 
-        // Update your field here.
         $user->setLastonline(new \DateTime("now"));
 
-        // Persist the data to database.
         $this->em->persist($user);
         $this->em->flush();
     }
